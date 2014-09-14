@@ -36,6 +36,14 @@ local function toggle_screen()
     return false
 end
 
+local function inc_bright(n)
+    os.execute("xbacklight -inc " .. tostring(n))
+end
+
+local function dec_bright(n)
+    os.execute("xbacklight -dec" .. tostring(n))
+end
+
 update_brightness(b_widget)
 
 mytimer = timer({ timeout = 0.2 })
@@ -44,5 +52,7 @@ mytimer:start()
 
 bright.b_widget = b_widget
 bright.toggle_screen = toggle_screen
+bright.inc_bright = inc_bright
+bright.dec_bright = dec_bright
 
 return bright
