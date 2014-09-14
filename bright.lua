@@ -36,12 +36,12 @@ local function toggle_screen()
     return false
 end
 
-local function inc_bright(n)
-    os.execute("xbacklight -inc " .. tostring(n))
+local function inc_bright()
+    os.execute("xbacklight -inc 10")
 end
 
-local function dec_bright(n)
-    os.execute("xbacklight -dec" .. tostring(n))
+local function dec_bright()
+    os.execute("xbacklight -dec 10")
 end
 
 update_brightness(b_widget)
